@@ -15,6 +15,16 @@ class LoginScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
+            const Hero(
+              tag: 'logo',
+              child: Icon(
+                Icons.space_dashboard,
+                size: 100,
+              ),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
             const MyTextField(hint: 'Email address'),
             const SizedBox(
               height: 20,

@@ -15,6 +15,13 @@ class RegistrationScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
+            const Hero(
+              tag: 'logo',
+              child: Icon(
+                Icons.space_dashboard,
+                size: 100,
+              ),
+            ),
             const MyTextField(hint: 'Name'),
             const SizedBox(
               height: 20,

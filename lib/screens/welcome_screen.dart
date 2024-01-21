@@ -21,9 +21,12 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
           children: [
             const Row(
               children: [
-                Icon(
-                  Icons.space_dashboard,
-                  size: 50,
+                Hero(
+                  tag: 'logo',
+                  child: Icon(
+                    Icons.space_dashboard,
+                    size: 50,
+                  ),
                 ),
                 Text(
                   'Chat Sphere',
