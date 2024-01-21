@@ -1,15 +1,15 @@
+import 'package:chat_sphere/firebase_options.dart';
 import 'package:chat_sphere/screens/chat_screen.dart';
 import 'package:chat_sphere/screens/login_screen.dart';
 import 'package:chat_sphere/screens/registration_screen.dart';
 import 'package:chat_sphere/screens/welcome_screen.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
-void main() {
-
-
-await Firebase.initializeApp(
+void main() async {
+  await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
-);
+  );
   runApp(const ChatSphere());
 }
 

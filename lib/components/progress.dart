@@ -10,7 +10,7 @@ class MyProgressIndicator extends StatefulWidget {
 class _MyProgressIndicatorState extends State<MyProgressIndicator> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: CircularProgressIndicator(),
     );
   }
