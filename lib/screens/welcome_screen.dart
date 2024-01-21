@@ -17,7 +17,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
     super.initState();
     _controller = AnimationController(
       duration: const Duration(seconds: 1),
-      upperBound: 60,
+      upperBound: 60, 
       vsync: this,
     );
 
