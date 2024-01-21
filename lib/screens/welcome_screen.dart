@@ -8,7 +8,26 @@ class WelcomeScreen extends StatefulWidget {
   State<WelcomeScreen> createState() => _WelcomeScreenState();
 }
 
-class _WelcomeScreenState extends State<WelcomeScreen> {
+class _WelcomeScreenState extends State<WelcomeScreen>
+    with SingleTickerProviderStateMixin {
+  late AnimationController _controller;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = AnimationController(
+      duration: const Duration(seconds: 1),
+      upperBound: 60,
+      vsync: this,
+    );
+
+    _controller.forward();
+
+    _controller.addListener(() {
+      setState(() {});
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,16 +38,16 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            const Row(
+            Row(
               children: [
                 Hero(
                   tag: 'logo',
                   child: Icon(
                     Icons.space_dashboard,
-                    size: 50,
+                    size: _controller.value,
                   ),
                 ),
-                Text(
+                const Text(
                   'Chat Sphere',
                   style: TextStyle(
                     fontSize: 45,

@@ -1,3 +1,5 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'package:chat_sphere/components/progress.dart';
 import 'package:flutter/material.dart';
 
 class MyButton extends StatelessWidget {
@@ -6,11 +8,11 @@ class MyButton extends StatelessWidget {
   final String routeName;
 
   const MyButton({
-    super.key,
-    required this.text,
+    Key? key,
     required this.color,
+    required this.text,
     required this.routeName,
-  });
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
