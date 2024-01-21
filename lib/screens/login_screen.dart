@@ -1,4 +1,5 @@
 import 'package:chat_sphere/components/my_button.dart';
+import 'package:chat_sphere/components/my_textfield.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -14,24 +15,11 @@ class LoginScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            TextField(
-              decoration: InputDecoration(
-                  hintText: 'Email address',
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(20),
-                  )),
-            ),
+            const MyTextField(hint: 'Email address'),
             const SizedBox(
               height: 20,
             ),
-            TextField(
-              decoration: InputDecoration(
-                hintText: 'password',
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(20),
-                ),
-              ),
-            ),
+            const MyTextField(hint: 'password'),
             const SizedBox(
               height: 20,
             ),
