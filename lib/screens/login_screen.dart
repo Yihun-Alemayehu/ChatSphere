@@ -1,4 +1,4 @@
-import 'package:chat_sphere/components/myButton.dart';
+import 'package:chat_sphere/components/my_button.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatelessWidget {
