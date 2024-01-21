@@ -18,7 +18,7 @@ class ChatSphere extends StatelessWidget {
       routes: {
         '/': (context) => const WelcomeScreen(),
         '/chat': (context) => const ChatScreen(),
-        '/registration': (context) => const RegistrationScreen(),
+        '/register': (context) => const RegistrationScreen(),
         '/login': (context) => const LoginScreen(),
       },
     );
