@@ -5,6 +5,11 @@ import 'package:chat_sphere/screens/welcome_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
+
+
+await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+);
   runApp(const ChatSphere());
 }
 
