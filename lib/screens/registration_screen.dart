@@ -1,9 +1,22 @@
 import 'package:chat_sphere/components/my_button.dart';
 import 'package:chat_sphere/components/my_textfield.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
-class RegistrationScreen extends StatelessWidget {
-  const RegistrationScreen({super.key});
+class RegistrationScreen extends StatefulWidget {
+  RegistrationScreen({super.key});
+
+  @override
+  State<RegistrationScreen> createState() => _RegistrationScreenState();
+}
+
+class _RegistrationScreenState extends State<RegistrationScreen> {
+  final TextEditingController nameController = TextEditingController();
+
+  final TextEditingController emailController = TextEditingController();
+
+  final TextEditingController passwordController = TextEditingController();
+  final _auth = FirebaseAuth.instance;
 
   @override
   Widget build(BuildContext context) {
@@ -22,22 +35,35 @@ class RegistrationScreen extends StatelessWidget {
                 size: 100,
               ),
             ),
-            const MyTextField(hint: 'Name'),
+            MyTextField(hint: 'Name', controller: nameController),
             const SizedBox(
               height: 20,
             ),
-            const MyTextField(hint: 'Email address'),
+            MyTextField(
+                hint: 'Email address',
+                mykeyboardType: TextInputType.emailAddress,
+                controller: emailController),
             const SizedBox(
               height: 20,
             ),
-            const MyTextField(hint: 'password'),
+            MyTextField(
+                obsecureText: true,
+                hint: 'password',
+                mykeyboardType: TextInputType.visiblePassword,
+                controller: passwordController),
             const SizedBox(
               height: 20,
             ),
             MyButton(
               text: 'Register',
               color: Colors.blue[800],
-              routeName: '/chat',
+              callBackFunction: () async {
+                await _auth.createUserWithEmailAndPassword(
+                  email: emailController.text,
+                  password: passwordController.text,
+                );
+                Navigator.pop(context);
+              },
             )
           ],
         ),

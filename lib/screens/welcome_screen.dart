@@ -62,7 +62,9 @@ class _WelcomeScreenState extends State<WelcomeScreen>
             MyButton(
               text: 'Log In',
               color: Colors.blue[400],
-              routeName: '/login',
+              callBackFunction: (){
+                Navigator.of(context).pushNamed('/login');
+              },
             ),
             const SizedBox(
               height: 10,
@@ -70,7 +72,9 @@ class _WelcomeScreenState extends State<WelcomeScreen>
             MyButton(
               text: 'Register',
               color: Colors.blue[800],
-              routeName: '/register',
+             callBackFunction: (){
+                Navigator.of(context).pushNamed('/register');
+              },
             ),
           ],
         ),

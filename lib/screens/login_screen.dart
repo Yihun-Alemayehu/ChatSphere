@@ -3,7 +3,10 @@ import 'package:chat_sphere/components/my_textfield.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatelessWidget {
-  const LoginScreen({super.key});
+   LoginScreen({super.key});
+
+  final TextEditingController emailController =  TextEditingController();
+  final TextEditingController passwordController =  TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -25,18 +28,27 @@ class LoginScreen extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-            const MyTextField(hint: 'Email address'),
+             MyTextField(
+                hint: 'Email address',
+                mykeyboardType: TextInputType.emailAddress,
+                controller: emailController),
             const SizedBox(
               height: 20,
             ),
-            const MyTextField(hint: 'password'),
+             MyTextField(
+              obsecureText: true,
+                hint: 'password',
+                mykeyboardType: TextInputType.visiblePassword,
+                controller: passwordController),
             const SizedBox(
               height: 20,
             ),
             MyButton(
               text: 'Log In',
               color: Colors.blue[300],
-              routeName: '/chat',
+              callBackFunction: (){
+                Navigator.of(context).pushNamed('/chat');
+              }
             )
           ],
         ),

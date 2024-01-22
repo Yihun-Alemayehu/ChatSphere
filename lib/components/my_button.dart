@@ -4,13 +4,13 @@ import 'package:flutter/material.dart';
 class MyButton extends StatelessWidget {
   final Color? color;
   final String text;
-  final String routeName;
+  final Function() callBackFunction;
 
   const MyButton({
     Key? key,
     required this.color,
     required this.text,
-    required this.routeName,
+    required this.callBackFunction,
   }) : super(key: key);
 
   @override
@@ -22,9 +22,7 @@ class MyButton extends StatelessWidget {
       ),
       color: color,
       minWidth: double.infinity,
-      onPressed: () {
-        Navigator.of(context).pushNamed(routeName);
-      },
+      onPressed: callBackFunction,
       child: Text(
         text,
         style: const TextStyle(

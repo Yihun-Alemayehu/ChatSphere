@@ -7,6 +7,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
@@ -23,8 +24,8 @@ class ChatSphere extends StatelessWidget {
       routes: {
         '/': (context) => const WelcomeScreen(),
         '/chat': (context) => const ChatScreen(),
-        '/register': (context) => const RegistrationScreen(),
-        '/login': (context) => const LoginScreen(),
+        '/register': (context) => RegistrationScreen(),
+        '/login': (context) =>  LoginScreen(),
       },
     );
   }
